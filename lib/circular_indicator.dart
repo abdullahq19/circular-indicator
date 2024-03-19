@@ -1,17 +1,18 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+// Enum for specifying the type of indicator
+enum IndicatorType {
+  loading, // For continuously loading indicators
+  staticProgress, // For static progress indicators
+}
+
 // Enum for specifying the direction of progress
 enum ProgressDirection {
   clockwise,
   counterClockwise;
 }
 
-// Enum for specifying the type of indicator
-enum IndicatorType {
-  loading, // For continuously loading indicators
-  staticProgress, // For static progress indicators
-}
 
 // Custom widget for displaying a progress indicator
 class CircularIndicator extends StatefulWidget {
