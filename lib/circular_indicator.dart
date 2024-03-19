@@ -266,7 +266,7 @@ class CircularProgressPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CircularProgressPainter oldDelegate) {
+  bool shouldRepaint(CircularIndicatorPainter oldDelegate) {
     // Compare all properties of the old and new delegates
     return value != oldDelegate.value ||
         color != oldDelegate.color ||
