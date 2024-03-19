@@ -9,5 +9,4 @@ A custom progress indicator widget for Flutter, allowing you to create both load
 - Specify the direction of progress (clockwise or counter-clockwise).
 - Supports tapping functionality with a callback function.
 
-Contributing
-Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
+### Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
