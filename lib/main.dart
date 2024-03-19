@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_progress_indicator/progress_indicator.dart';
+import 'package:flutter_progress_indicator/circular_indicator.dart';
 
 void main() {
   runApp(const MainApp());

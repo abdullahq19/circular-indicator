@@ -60,10 +60,10 @@ class CircularIndicator extends StatefulWidget {
 
   @override
   State<CircularIndicator> createState() =>
-      _CustomProgressIndicatorState();
+      _CircularIndicatorState();
 }
 
-class _CustomProgressIndicatorState extends State<CircularIndicator>
+class _CircularIndicatorState extends State<CircularIndicator>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
