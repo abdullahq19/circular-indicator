@@ -1,6 +1,6 @@
 # Circular Progress Indicator Widget
 
-A custom progress indicator widget for Flutter, allowing you to create both loading indicators and static progress indicators with customizable styles.
+A circular progress indicator widget for Flutter, allowing you to create both loading indicators and static progress indicators with customizable styles.
 
 ## Features
 
