@@ -10,9 +10,11 @@ A circular progress indicator widget for Flutter, allowing you to create both lo
 - Supports tapping functionality with a callback function.
 
 ## IndicatorType.loading
+A repeating circular animation, can be used for indicating that a certain task is in process
 ![loading_gif-ezgif com-optimize](https://github.com/abdullahq19/circular-indicator/assets/115882779/a5b1af77-884b-4115-bcb4-677d28ac9ebf)
 
 ## IndicatorType.staticProgress
+A static animation that animates from 0 to given `progressValue` once on every page rebuild. Ideal for showing current progress of a certain task
 ![progress_gif-ezgif com-video-to-gif-converter](https://github.com/abdullahq19/circular-indicator/assets/115882779/99555808-b828-439c-8946-61718e8bdeff)
 
 
