@@ -133,7 +133,7 @@ class _CircularIndicatorState extends State<CircularIndicator>
               fit: StackFit.expand,
               children: [
                 CustomPaint(
-                  painter: CircularProgressPainter(
+                  painter: CircularIndicatorPainter(
                     value: _animation.value,
                     color: widget.color,
                     gradient: widget.gradient,
@@ -166,7 +166,7 @@ class _CircularIndicatorState extends State<CircularIndicator>
 
 // CustomPainter
 
-class CircularProgressPainter extends CustomPainter {
+class CircularIndicatorPainter extends CustomPainter {
   final double value; // The current value of the progress (0.0 to 1.0)
   final Color color; // The color of the progress indicator
   final Gradient? gradient; // Optional gradient for the progress indicator
@@ -177,7 +177,7 @@ class CircularProgressPainter extends CustomPainter {
   final bool showBackground; // Whether to show the background
   final ProgressDirection direction; // Direction of the progress indicator
 
-  CircularProgressPainter({
+  CircularIndicatorPainter({
     required this.value,
     required this.color,
     required this.gradient,
@@ -265,7 +265,7 @@ class CircularProgressPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CircularProgressPainter oldDelegate) {
+  bool shouldRepaint(CircularIndicatorPainter oldDelegate) {
     // Compare all properties of the old and new delegates
     return value != oldDelegate.value ||
         color != oldDelegate.color ||
