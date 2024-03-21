@@ -54,7 +54,6 @@ class CircularIndicator extends StatefulWidget {
     this.strokeCap = StrokeCap.round,
     this.progressTextStyle = const TextStyle(
       color: Colors.black,
-      fontSize: 12,
       fontWeight: FontWeight.w600,
     ),
   }) : super(key: key);
@@ -113,14 +112,15 @@ class _CircularIndicatorState extends State<CircularIndicator>
 
   @override
   Widget build(BuildContext context) {
+    double fontSize = widget.size * 0.2;
+    TextStyle textStyle = widget.progressTextStyle.copyWith(fontSize: fontSize);
+
     return GestureDetector(
       onTap: () {
         if (widget.onTap != null) {
           widget.onTap!(); // Invoke Callback if onTap is not null
         } else {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text(
-                  'Warning: onTap callback not provided'))); // Show a SnackBar if onTap Callback is not provided
+          print('Warning: onTap Callback not provided'); // print a message if onTap Callback is not provided
         }
       },
       child: AnimatedBuilder(
@@ -152,7 +152,7 @@ class _CircularIndicatorState extends State<CircularIndicator>
                     alignment: Alignment.center,
                     child: Text(
                       '${(_animation.value * widget.maxValue).toStringAsFixed(0)}%', // Setting current value of progressValue by getting live value from animation tween
-                      style: widget.progressTextStyle,
+                      style: textStyle,
                     ),
                   ),
                 ),
