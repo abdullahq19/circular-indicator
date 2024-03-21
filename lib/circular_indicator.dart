@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 // Enum for specifying the type of indicator
 enum IndicatorType {
-  loading, // For continuously loading indicators
-  staticProgress, // For static progress indicators
+  loading, // For continuously loading indicator
+  staticProgress, // For static progress indicator
 }
 
 // Enum for specifying the direction of progress
@@ -13,7 +13,7 @@ enum ProgressDirection {
   counterClockwise;
 }
 
-// Custom widget for displaying a progress indicator
+
 class CircularIndicator extends StatefulWidget {
   // Properties
   final double size; // Size of the indicator
@@ -33,7 +33,7 @@ class CircularIndicator extends StatefulWidget {
   final Curve curve; // Curve for animation
   final void Function()? onTap; // Callback function for tap event
 
-  // Constructor
+
   const CircularIndicator({
     Key? key,
     required this.indicatorType,
@@ -69,13 +69,11 @@ class _CircularIndicatorState extends State<CircularIndicator>
   @override
   void initState() {
     super.initState();
-    // Initialize Animation Controller
     _animationController = AnimationController(
       vsync: this,
       duration: widget.duration,
     );
 
-    // Initialize Animation Tween
     _animation = Tween<double>(
       begin: 0.0,
       end: widget.indicatorType == IndicatorType.loading
@@ -104,7 +102,7 @@ class _CircularIndicatorState extends State<CircularIndicator>
 
   @override
   void dispose() {
-    _animationController.dispose(); // Dispose Animation Controller
+    _animationController.dispose();
     super.dispose();
   }
 
