@@ -13,7 +13,6 @@ enum ProgressDirection {
   counterClockwise;
 }
 
-
 // Custom widget for displaying a progress indicator
 class CircularIndicator extends StatefulWidget {
   // Properties
@@ -59,8 +58,7 @@ class CircularIndicator extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CircularIndicator> createState() =>
-      _CircularIndicatorState();
+  State<CircularIndicator> createState() => _CircularIndicatorState();
 }
 
 class _CircularIndicatorState extends State<CircularIndicator>
@@ -120,7 +118,8 @@ class _CircularIndicatorState extends State<CircularIndicator>
         if (widget.onTap != null) {
           widget.onTap!(); // Invoke Callback if onTap is not null
         } else {
-          print('Warning: onTap Callback not provided'); // print a message if onTap Callback is not provided
+          print(
+              'Warning: onTap Callback not provided'); // print a message if onTap Callback is not provided
         }
       },
       child: AnimatedBuilder(

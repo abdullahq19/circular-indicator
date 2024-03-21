@@ -12,18 +12,17 @@ class HomePage extends StatelessWidget {
           height: 300,
           width: 300,
           decoration: BoxDecoration(
-            color: Colors.blue.shade100.withOpacity(0.3),
-            borderRadius: BorderRadius.circular(30)
-          ),
+              color: Colors.blue.shade100.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(30)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: CircularIndicator(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: CircularIndicator(
                       indicatorType: IndicatorType.staticProgress,
                       progressValue: 23,
                       maxValue: 100,
@@ -32,12 +31,15 @@ class HomePage extends StatelessWidget {
                       color: Colors.purple,
                       strokeWidth: 10,
                       duration: const Duration(seconds: 4),
-                      progressTextStyle: const TextStyle(color: Colors.indigo,fontSize: 20,fontWeight: FontWeight.w700),
-                                    ),
+                      progressTextStyle: const TextStyle(
+                          color: Colors.indigo,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: CircularIndicator(
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: CircularIndicator(
                       indicatorType: IndicatorType.staticProgress,
                       progressValue: 48,
                       maxValue: 100,
@@ -46,17 +48,20 @@ class HomePage extends StatelessWidget {
                       color: Colors.blue,
                       strokeWidth: 10,
                       duration: const Duration(seconds: 4),
-                      progressTextStyle: const TextStyle(color: Colors.indigo,fontSize: 20,fontWeight: FontWeight.w700),
-                                    ),
+                      progressTextStyle: const TextStyle(
+                          color: Colors.indigo,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700),
                     ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: CircularIndicator(
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: CircularIndicator(
                       indicatorType: IndicatorType.staticProgress,
                       progressValue: 69,
                       maxValue: 100,
@@ -65,12 +70,15 @@ class HomePage extends StatelessWidget {
                       color: Colors.green,
                       strokeWidth: 10,
                       duration: const Duration(seconds: 4),
-                      progressTextStyle: const TextStyle(color: Colors.indigo,fontSize: 20,fontWeight: FontWeight.w700),
-                                    ),
+                      progressTextStyle: const TextStyle(
+                          color: Colors.indigo,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: CircularIndicator(
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: CircularIndicator(
                       indicatorType: IndicatorType.staticProgress,
                       progressValue: 83,
                       maxValue: 100,
@@ -79,11 +87,14 @@ class HomePage extends StatelessWidget {
                       color: Colors.red,
                       strokeWidth: 10,
                       duration: const Duration(seconds: 4),
-                      progressTextStyle: const TextStyle(color: Colors.indigo,fontSize: 20,fontWeight: FontWeight.w700),
-                                    ),
+                      progressTextStyle: const TextStyle(
+                          color: Colors.indigo,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700),
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
