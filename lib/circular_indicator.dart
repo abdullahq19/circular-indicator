@@ -252,7 +252,6 @@ class CircularIndicatorPainter extends CustomPainter {
   // Method for drawing the background
   void drawIndicatorBackground(Canvas canvas, Size size, Offset center,
       double radius, Paint backgroundPaint) {
-    // Draw the background as a full circle
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
       -pi / 2,
@@ -264,7 +263,6 @@ class CircularIndicatorPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CircularIndicatorPainter oldDelegate) {
-    // Compare all properties of the old and new delegates
     return value != oldDelegate.value ||
         color != oldDelegate.color ||
         gradient != oldDelegate.gradient ||
