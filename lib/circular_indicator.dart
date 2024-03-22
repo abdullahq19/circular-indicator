@@ -4,11 +4,7 @@ import 'package:flutter_progress_indicator/circular_indicator_painter.dart';
 // Enum for specifying the type of indicator
 enum IndicatorType {
   loading, // For continuously loading indicator
-<<<<<<< HEAD
   staticProgress // For static progress indicator
-=======
-  staticProgress, // For static progress indicator
->>>>>>> da26d2f98afeab7048dc05678a6834575e780ecb
 }
 
 // Enum for specifying the direction of progress
@@ -110,7 +106,7 @@ class _CircularIndicatorState extends State<CircularIndicator>
   @override
   Widget build(BuildContext context) {
     double fontSize = widget.size * 0.2;
-    TextStyle textStyle = widget.progressTextStyle.copyWith(fontSize: fontSize);
+    TextStyle textStyle = widget.progressTextStyle.copyWith(fontSize: fontSize); // Calculating fontSize dynamically
 
     return GestureDetector(
       onTap: () {
@@ -161,119 +157,3 @@ class _CircularIndicatorState extends State<CircularIndicator>
     );
   }
 }
-<<<<<<< HEAD
-=======
-
-// CustomPainter
-
-class CircularIndicatorPainter extends CustomPainter {
-  final double value; // The current value of the progress (0.0 to 1.0)
-  final Color color; // The color of the progress indicator
-  final Gradient? gradient; // Optional gradient for the progress indicator
-  final Gradient? backgroundGradient; // Optional gradient for the background
-  final Color backgroundColor; // Background color
-  final double strokeWidth; // Width of the progress indicator
-  final StrokeCap strokeCap; // Shape of the progress indicator ends
-  final bool showBackground; // Whether to show the background
-  final ProgressDirection direction; // Direction of the progress indicator
-
-  CircularIndicatorPainter({
-    required this.value,
-    required this.color,
-    required this.gradient,
-    required this.direction,
-    required this.backgroundGradient,
-    required this.showBackground,
-    required this.backgroundColor,
-    required this.strokeWidth,
-    required this.strokeCap,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    // Calculate width and height of the parent widget
-    final Size(:width, :height) = size;
-
-    // Calculate the center offset of the circle
-    final center = Offset(width / 2, height / 2);
-
-    // Calculate the radius of the circle
-    final radius = min(width / 2, height / 2);
-
-    // Paint for the progress indicator
-    final indicatorPaint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke
-      ..strokeCap = strokeCap
-      ..shader = gradient
-          ?.createShader(Rect.fromCircle(center: center, radius: radius));
-
-    // Paint for the background
-    final backgroundPaint = Paint()
-      ..color = backgroundColor
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke
-      ..strokeCap = strokeCap
-      ..shader = backgroundGradient
-          ?.createShader(Rect.fromCircle(center: center, radius: radius));
-
-    // Draw the background if showBackground is true
-    if (showBackground) {
-      drawIndicatorBackground(canvas, size, center, radius, backgroundPaint);
-    }
-
-    // Draw the progress indicator
-    drawIndicator(canvas, size, center, radius, indicatorPaint);
-  }
-
-  // Method for drawing the progress indicator
-  void drawIndicator(Canvas canvas, Size size, Offset center, double radius,
-      Paint indicatorPaint) {
-    if (direction == ProgressDirection.clockwise) {
-      // Draw the progress indicator in a clockwise direction
-      canvas.drawArc(
-        Rect.fromCircle(center: center, radius: radius),
-        -pi / 2,
-        2 * pi * value,
-        false,
-        indicatorPaint,
-      );
-    } else {
-      // Draw the progress indicator in a counter-clockwise direction
-      canvas.drawArc(
-        Rect.fromCircle(center: center, radius: radius),
-        -pi / 2,
-        -2 * pi * value,
-        false,
-        indicatorPaint,
-      );
-    }
-  }
-
-  // Method for drawing the background
-  void drawIndicatorBackground(Canvas canvas, Size size, Offset center,
-      double radius, Paint backgroundPaint) {
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      -pi / 2,
-      2 * pi,
-      false,
-      backgroundPaint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(CircularIndicatorPainter oldDelegate) {
-    return value != oldDelegate.value ||
-        color != oldDelegate.color ||
-        gradient != oldDelegate.gradient ||
-        backgroundGradient != oldDelegate.backgroundGradient ||
-        backgroundColor != oldDelegate.backgroundColor ||
-        strokeWidth != oldDelegate.strokeWidth ||
-        strokeCap != oldDelegate.strokeCap ||
-        showBackground != oldDelegate.showBackground ||
-        direction != oldDelegate.direction;
-  }
-}
->>>>>>> da26d2f98afeab7048dc05678a6834575e780ecb
