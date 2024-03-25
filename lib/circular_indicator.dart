@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_progress_indicator/circular_indicator_painter.dart';
 
-// Enum for specifying the type of indicator
+/// Enum [IndicatorType] is used to set which indicator to use
+
 enum IndicatorType {
   loading, // For continuously loading indicator
-  staticProgress // For static progress indicator
+  staticProgress /// For static progress indicator, shows the current [progressValue] provided
 }
 
 // Enum for specifying the direction of progress
 enum ProgressDirection { clockwise, counterClockwise }
-
 
 class CircularIndicator extends StatefulWidget {
   // Properties
@@ -29,7 +29,6 @@ class CircularIndicator extends StatefulWidget {
   final double maxValue; // Maximum value of progress
   final Curve curve; // Curve for animation
   final void Function()? onTap; // Callback function for tap event
-
 
   const CircularIndicator({
     Key? key,
@@ -75,25 +74,23 @@ class _CircularIndicatorState extends State<CircularIndicator>
       begin: 0.0,
       end: widget.indicatorType == IndicatorType.loading
           ? 1.0
-          : widget.progressValue /
-              widget
-                  .maxValue, // Converting progressValue into Animation Tween value so it can animate to the given value
+          : widget.progressValue / widget.maxValue,
+
+      /// Converting [progressValue] into Animation Tween value so it can animate to the given value
     ).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: widget.curve,
       ),
     )..addListener(() {
-        setState(() {}); // Set state for widget rebuild on state change
+        setState(() {}); // Set state for updating state on widget rebuild
       });
 
     // Toggle animations between two states of IndicatorType
     if (widget.indicatorType == IndicatorType.loading) {
-      _animationController
-          .repeat(); // Repeating Animation if IndicatorType.loading
+      _animationController.repeat(); /// Repeating Animation if [IndicatorType.loading]
     } else {
-      _animationController
-          .forward(); // Static Animation if IndicatorType.staticProgress
+      _animationController.forward(); /// Static Animation if [IndicatorType.staticProgress]
     }
   }
 
@@ -105,8 +102,9 @@ class _CircularIndicatorState extends State<CircularIndicator>
 
   @override
   Widget build(BuildContext context) {
+    /// Calculating [progressValue] fontSize dynamically
     double fontSize = widget.size * 0.2;
-    TextStyle textStyle = widget.progressTextStyle.copyWith(fontSize: fontSize); // Calculating fontSize dynamically
+    TextStyle textStyle = widget.progressTextStyle.copyWith(fontSize: fontSize);
 
     return GestureDetector(
       onTap: () {
@@ -144,7 +142,7 @@ class _CircularIndicatorState extends State<CircularIndicator>
                     ? Align(
                         alignment: Alignment.center,
                         child: Text(
-                          '${(_animation.value * widget.maxValue).toStringAsFixed(0)}%', // Setting current value of progressValue by getting live value from animation tween
+                          '${(_animation.value * widget.maxValue).toStringAsFixed(0)}%', /// Setting current value of [progressValue] by converting Animation Tween into current value
                           style: textStyle,
                         ),
                       )

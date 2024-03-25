@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           maxValue: 1000,
           size: 100,
           showBackground: true,
-          strokeWidth: 10,
+          strokeWidth: 5,
           duration: Duration(seconds: 3),
         ),
       ),
